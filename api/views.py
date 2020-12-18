@@ -123,11 +123,11 @@ def updateCategory(request, category_id):
         category = Category.objects.get(id=category_id)
         print("id", category)
     except Category.DoesNotExist:
-        return Response({'message': "requested category does not exist", "status": status.HTTP_404_NOT_FOUND})
+        return Response({'message': "requested category does not exist"}, status=status.HTTP_404_NOT_FOUND)
 
     if request.method == "GET":
         serializer = CategorySerializer(category)
-        return Response({"data": serializer.data, "status": status.HTTP_200_OK})
+        return Response({"data": serializer.data}, status=status.HTTP_200_OK)
 
     elif request.method == "PUT":
         serializer = CategorySerializer(category, data=request.data)
