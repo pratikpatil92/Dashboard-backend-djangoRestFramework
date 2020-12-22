@@ -25,7 +25,7 @@ urlpatterns = [
     path('get_user/', views.GetSingleUserData.as_view(), name='auth_user_details'),
     path('get_category/', views.get_category),
     path('add_category/', views.addCategory),
-    path('edit_category/<int:category_id>', views.updateCategory),
+        path('edit_category/<int:category_id>', views.updateCategory),
     path('delete_category/<int:category_id>', views.deleteCategory),
 
 ]

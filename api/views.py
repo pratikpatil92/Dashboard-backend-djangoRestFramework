@@ -161,8 +161,9 @@ def deleteCategory(request, category_id):
 
 class PostViewset(viewsets.ModelViewSet):
     """manage post in database"""
-    serializer_class = PostSerializer
     queryset = Post.objects.all()
+    serializer_class = PostSerializer
+
 
 
     # @action(methods=['POST'], detail=True, url_path='upload-image')

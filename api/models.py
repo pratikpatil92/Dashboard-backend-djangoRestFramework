@@ -22,7 +22,7 @@ class Category(models.Model):
 
 class Post(models.Model):
     """This is model for post"""
-    categoryName = models.ForeignKey(Category,related_name="posts", on_delete=models.SET_NULL, null=True)
+    categoryId = models.ForeignKey(Category,related_name="posts", on_delete=models.SET_NULL, null=True)
     title = models.CharField(max_length=255)
     body = models.TextField()
     image = models.ImageField(null=True, upload_to=post_image_file_path)
